@@ -9,9 +9,13 @@
 
 ---
 
-## 📸 Demo Preview
+## 📸 Live Research Output Preview
 
-![AI Research Agent Terminal Demo](assets/demo.png)
+### 📊 Part 1: Executive Summary, Baseline & Market Outlook
+![AI Research Agent Output - Part 1](assets/demo-part1.png)
+
+### 🛡️ Part 2: Regulatory Landscape, Risk Mitigation & Key Takeaways
+![AI Research Agent Output - Part 2](assets/demo-part2.png)
 
 ---
 
@@ -50,8 +54,9 @@ flowchart TD
 AI-Research-Agent/
 │
 ├── assets/
-│   ├── demo.png         # VS Code terminal output screenshot
-│   └── demo.svg         # Vector terminal recording
+│   ├── demo-part1.png   # Output Preview: Summary & Market Outlook
+│   ├── demo-part2.png   # Output Preview: Governance, Risks & Takeaways
+│   └── demo.png         # Full continuous report screenshot
 │
 ├── research_agent.py    # Core AI research agent logic (~40 lines)
 ├── requirements.txt     # Python dependencies
@@ -89,7 +94,7 @@ GROQ_API_KEY=your_actual_groq_api_key_here
 ```bash
 python research_agent.py
 ```
-Enter any topic (e.g., `Future of AI Agents in 2026`, `Quantum Computing Breakthroughs`) and watch the agent autonomously search and compile the report!
+Enter any topic (e.g., `Future of AI Agents in 2027`, `Quantum Computing Breakthroughs`) and watch the agent autonomously search and compile the report!
 
 ---
 
