@@ -1,6 +1,9 @@
 # Environment Variables & Secrets (NEVER COMMIT)
 .env
 
+# Local screen recording utilities
+type_simulator.py
+
 # Python Cache
 __pycache__/
 *.py[cod]

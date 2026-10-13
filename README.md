@@ -27,7 +27,6 @@
 - **🔍 Live Web Scraping & Search**: Autonomously formulates search queries and scrapes DuckDuckGo without requiring expensive Google/Bing API keys.
 - **🧠 ReAct Loop**: Seamless cycle of *Thought → Action (Search) → Observation (Read) → Synthesis (Report)*.
 - **📊 Rich Terminal UI**: Beautiful formatted markdown reports, status panels, and styled tables powered by `rich`.
-- **🎥 Built-in Typing Simulator**: Includes `type_simulator.py` to simulate realistic character-by-character human typing for screen recording demos.
 
 ---
 
@@ -55,7 +54,6 @@ AI-Research-Agent/
 │   └── demo.svg         # Vector terminal recording
 │
 ├── research_agent.py    # Core AI research agent logic (~40 lines)
-├── type_simulator.py    # Automation tool for live human-typing demo recordings
 ├── requirements.txt     # Python dependencies
 ├── .env.example         # Template for environment configuration
 ├── .gitignore           # Ignores sensitive keys and cache files
@@ -92,21 +90,6 @@ GROQ_API_KEY=your_actual_groq_api_key_here
 python research_agent.py
 ```
 Enter any topic (e.g., `Future of AI Agents in 2026`, `Quantum Computing Breakthroughs`) and watch the agent autonomously search and compile the report!
-
----
-
-## 🎬 Live Typing Simulator (For Video Creators)
-
-Want to record a clean coding video for LinkedIn, Twitter, or YouTube?
-
-1. Open `research_agent.py` in your code editor and clear the file.
-2. Run the simulator script:
-   ```bash
-   python type_simulator.py
-   ```
-3. Start your screen recording software.
-4. Press **`F8`** — the script will realistically type out the entire code with natural human pauses and zero indentation bugs!
-*(Press `ESC` anytime to immediately cancel).*
 
 ---
 
