@@ -9,6 +9,12 @@
 
 ---
 
+## 📸 Demo Preview
+
+![AI Research Agent Terminal Demo](assets/demo.png)
+
+---
+
 ## 📌 Overview
 
 **AI Research Agent** implements the **ReAct (Reasoning + Acting)** pattern to autonomously conduct in-depth web research on any topic. Instead of relying solely on pre-trained LLM knowledge, it queries the live web, analyzes the latest sources, and compiles a comprehensive research brief with structured tables and strategic takeaways.
@@ -43,6 +49,10 @@ flowchart TD
 
 ```text
 AI-Research-Agent/
+│
+├── assets/
+│   ├── demo.png         # VS Code terminal output screenshot
+│   └── demo.svg         # Vector terminal recording
 │
 ├── research_agent.py    # Core AI research agent logic (~40 lines)
 ├── type_simulator.py    # Automation tool for live human-typing demo recordings
