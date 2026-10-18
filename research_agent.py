@@ -18,7 +18,7 @@ def search(q: str) -> str:
     print(f"[bold cyan]🔍 Searching Live Web Sources:[/bold cyan] {q}")
     with DDGS() as ddgs:
         res = list(ddgs.text(q, max_results=3))
-        return "\n".join([f"[{i+1}] {r['title']}: {r['body']}" for r in res])
+        return "\n".join([f"[{i+1}] {r['title']}: {r['body']}" for i, r in enumerate(res)])
 
 def verify(claims: str, sources: str) -> str:
     prompt = f"Sources:\n{sources}\n\nClaims:\n{claims}\n\nCheck each claim against Sources. If supported by text, output: [VERIFIED] <claim> | Proof: <exact quote>. If unsupported or speculative, output: [FLAGGED] <claim> | Warning: <reason>."
