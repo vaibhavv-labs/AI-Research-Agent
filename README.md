@@ -1,11 +1,21 @@
-# 🤖 AI Research Agent
+# 🤖 AI Research Agent (v2.0 with Source Verification)
 
-> An ultra-fast, autonomous **Deep Research AI Agent** built from scratch in ~40 lines of pure Python using **Groq** and **DuckDuckGo Search**.
+> An ultra-fast, autonomous **Deep Research AI Agent** with **Built-in Source Verification & Hallucination Detection**, built in ~50 lines of pure Python using **Groq** and **DuckDuckGo Search**.
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg?logo=python&logoColor=white)](https://www.python.org/)
 [![Groq](https://img.shields.io/badge/Groq-Ultra--Fast%20LPU-orange?logo=fastapi)](https://groq.com/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/vaibhavv-labs/AI-Research-Agent?style=social)](https://github.com/vaibhavv-labs/AI-Research-Agent)
+
+---
+
+## 🚀 What's New in v2.0: Autonomous Source Verification
+
+In v2.0, the agent doesn't just synthesize search results—it **fact-checks itself** to eliminate hallucinations:
+
+- **🛡️ Cross-Referencing Engine**: Automatically extracts factual claims and matches them against retrieved raw source evidence.
+- **✅ `[VERIFIED]` Stamp**: Confirmed facts are tagged with verbatim proof and source attribution.
+- **⚠️ `[FLAGGED]` Alert**: Speculative or unbacked claims are proactively flagged with clear warnings instead of being presented as truth.
 
 ---
 
@@ -21,29 +31,31 @@
 
 ## 📌 Overview
 
-**AI Research Agent** implements the **ReAct (Reasoning + Acting)** pattern to autonomously conduct in-depth web research on any topic. Instead of relying solely on pre-trained LLM knowledge, it queries the live web, analyzes the latest sources, and compiles a comprehensive research brief with structured tables and strategic takeaways.
+**AI Research Agent** implements the **ReAct (Reasoning + Acting)** pattern with a dedicated **Verification Critic Loop**. Instead of blindly trusting pre-trained LLM assumptions or unverified snippets, it searches the live web, cross-verifies every claim, and compiles an audit table alongside the final grounded report.
 
 ---
 
 ## ✨ Features
 
-- **⚡ Lightning-Fast Inference**: Runs on Groq's LPUs for near-instant responses.
-- **🔍 Live Web Scraping & Search**: Autonomously formulates search queries and scrapes DuckDuckGo without requiring expensive Google/Bing API keys.
-- **🧠 ReAct Loop**: Seamless cycle of *Thought → Action (Search) → Observation (Read) → Synthesis (Report)*.
-- **📊 Rich Terminal UI**: Beautiful formatted markdown reports, status panels, and styled tables powered by `rich`.
+- **⚡ Lightning-Fast Inference**: Runs on Groq's LPUs (`openai/gpt-oss-120b` / `llama-3.3-70b-versatile`) for sub-second responses.
+- **🔍 Zero-Cost Live Web Search**: Autonomously retrieves real-time data using DuckDuckGo without expensive API subscriptions.
+- **🛡️ Self-Audit Verification Table**: Audits claims with `✅ VERIFIED` (with quoted proof) and `⚠️ FLAGGED` (hallucination warning).
+- **📊 Rich Terminal UI**: Styled markdown reports, comparison tables, and colorful panels powered by `rich`.
+- **🪶 Ultra-Lightweight**: Zero heavy frameworks (no LangChain, no LlamaIndex) — just ~50 lines of clean, readable Python.
 
 ---
 
-## 🏗️ Architecture
+## 🏗️ Architecture (v2.0)
 
 ```mermaid
 flowchart TD
-    A([User Input: Research Topic]) --> B[Agent Prompt]
-    B --> C{Groq LLM: Reasoning}
-    C -- "Needs Data: SEARCH <query>" --> D[DuckDuckGo Search]
-    D -- Live Search Results --> C
-    C -- "Has Sufficient Data: REPORT" --> E[Rich Terminal Markdown Panel]
-    E --> F([Final Structured Report])
+    A([User Input: Research Topic]) --> B[Live Web Search via DuckDuckGo]
+    B --> C[Extract Factual Claims & Generate Draft]
+    C --> D{🛡️ Source Verification Engine}
+    D -- "Evidence Backed" --> E["✅ VERIFIED (with source quote)"]
+    D -- "Missing / Insufficient Proof" --> F["⚠️ FLAGGED (hallucination alert)"]
+    E & F --> G[Verification Audit Table]
+    G --> H([Final Grounded Research Report])
 ```
 
 ---
@@ -58,7 +70,7 @@ AI-Research-Agent/
 │   ├── demo-part2.png   # Output Preview: Governance, Risks & Takeaways
 │   └── demo.png         # Full continuous report screenshot
 │
-├── research_agent.py    # Core AI research agent logic (~40 lines)
+├── research_agent.py    # Core AI research agent + verifier (~50 lines)
 ├── requirements.txt     # Python dependencies
 ├── .env.example         # Template for environment configuration
 ├── .gitignore           # Ignores sensitive keys and cache files
@@ -94,7 +106,7 @@ GROQ_API_KEY=your_actual_groq_api_key_here
 ```bash
 python research_agent.py
 ```
-Enter any topic (e.g., `Future of AI Agents in 2027`, `Quantum Computing Breakthroughs`) and watch the agent autonomously search and compile the report!
+Enter any topic (e.g., `DeepSeek V3 model specs`, `Future of AI Agents in 2027`) and watch the agent search, verify sources, and output the report!
 
 ---
 
