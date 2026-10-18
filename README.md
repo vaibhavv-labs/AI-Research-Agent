@@ -9,6 +9,12 @@
 
 ---
 
+## 📸 Live Research Output Preview (v2.0)
+
+![AI Research Agent v2.0 Output Preview](assets/output.png)
+
+---
+
 ## 🚀 What's New in v2.0: Autonomous Source Verification
 
 In v2.0, the agent doesn't just synthesize search results—it **fact-checks itself** to eliminate hallucinations:
@@ -16,16 +22,6 @@ In v2.0, the agent doesn't just synthesize search results—it **fact-checks its
 - **🛡️ Cross-Referencing Engine**: Automatically extracts factual claims and matches them against retrieved raw source evidence.
 - **✅ `[VERIFIED]` Stamp**: Confirmed facts are tagged with verbatim proof and source attribution.
 - **⚠️ `[FLAGGED]` Alert**: Speculative or unbacked claims are proactively flagged with clear warnings instead of being presented as truth.
-
----
-
-## 📸 Live Research Output Preview
-
-### 📊 Part 1: Executive Summary, Baseline & Market Outlook
-![AI Research Agent Output - Part 1](assets/demo-part1.png)
-
-### 🛡️ Part 2: Regulatory Landscape, Risk Mitigation & Key Takeaways
-![AI Research Agent Output - Part 2](assets/demo-part2.png)
 
 ---
 
@@ -66,9 +62,10 @@ flowchart TD
 AI-Research-Agent/
 │
 ├── assets/
-│   ├── demo-part1.png   # Output Preview: Summary & Market Outlook
-│   ├── demo-part2.png   # Output Preview: Governance, Risks & Takeaways
-│   └── demo.png         # Full continuous report screenshot
+│   ├── output.png       # v2.0 Live Output Preview (Verification Audit + Grounded Brief)
+│   ├── demo-part1.png   # Full Research Report: Summary & Market Outlook
+│   ├── demo-part2.png   # Full Research Report: Governance & Key Takeaways
+│   └── demo.png         # Complete continuous report preview
 │
 ├── research_agent.py    # Core AI research agent + verifier (~50 lines)
 ├── requirements.txt     # Python dependencies
